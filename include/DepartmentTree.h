@@ -31,8 +31,8 @@ private:
     //searches the tree for a department with the given name.
     static DepartmentNode* findNode(DepartmentNode* current, const std::string& name);
 
-    int getDepth(const DepartmentNode *node);   // find the depth of a node form the root.
-    int getDepth(const DepartmentNode* node) const;
+    // int getDepth(const DepartmentNode *node);   // find the depth of a node form the root.
+    static int getDepth(const DepartmentNode* node);
 
     // Recursively prints the department hierarchy with indentation based on each department's depth.
     static void printHierarchyRecursive(const DepartmentNode* current, int depth);
