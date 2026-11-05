@@ -1,0 +1,14 @@
+# Executable binaries
+campus
+*.exe
+*.out
+*.app
+
+# Object files & build outputs
+obj/
+*.o
+
+# Editor / IDE configuration files
+.DS_Store
+.vscode/
+.idea/
