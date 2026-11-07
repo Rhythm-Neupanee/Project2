@@ -44,4 +44,3 @@ public:
 };
 
 #endif // HASHTABLE_H
-HashTable.h
