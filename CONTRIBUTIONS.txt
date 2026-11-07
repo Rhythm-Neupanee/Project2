@@ -1,0 +1,26 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Name & GitHub Handle              | Primary Focus            | Key Implementation Details             | Testing & Quality          | Repository Evidence    |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Marcos Guevara                    | Facilities & Custom      | Built Facility struct and custom       | Hash table unit testing,   | 8 commits authored     |
+(GitHub: marcosg565)              | Hash Table               | HashTable with Separate Chaining.      | duplicate key verification,|                        |
+                                  |                          | Refactored code structure & comments.  | & header guard checks.     |                        |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Patrick Ezeli                     | Campus Graph & Data      | Implemented CampusGraph with           | Graph adjacency testing,   | 4 commits authored     |
+(GitHub: classicm425-collab)      | Loader                   | adjacency list & DataLoader engine     | degree validation, & multi-|                        |
+                                  |                          | for file processing.                   | file loading verification. |                        |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Rhythm Neupane                    | Department General Tree, | Implemented DepartmentTree, Utils      | Tree traversal tests,      | Repository Owner;      |
+(GitHub: Rhythm-Neupanee)         | Utils, & Integration     | helper logic, root/parent linkages,    | linker error fixes, & PR   | 12 commits authored;   |
+                                  |                          | main setup, & repo administration.     | code reviews.              | 1 PR merged            |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Detailed Summaries:
+
+Marcos Guevara (marcosg565):
+Facility record handling was done by Marcos along with implementation of custom hash table module. Marcos implemented the Facility struct, HashTable class using Separate Chaining method, string hashing, normalization of facility IDs and improved header guard, formatting and documentation.
+
+Patrick Ezeli (classicm425-collab):
+Patrick developed the campus graph module and file loading engine. This includes developing the CampusGraph header and implementation using the adjacency list to analyze connectivity and degrees, as well as the DataLoader module to process data files for the campus.
+
+Rhythm Neupane (Rhythm-Neupanee):
+Rhythm was in charge of department tree and utility functions. He defined the project layout and `.gitignore`, created string trimmer and validator utility functions in `Utils`, created the general department tree implementation (`DepartmentNode`, depth calculation, parent-child relationship, preorder traversal), fixed signature linker issues, and handled branch merging.
