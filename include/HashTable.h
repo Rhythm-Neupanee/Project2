@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-// Node for separate chaining buckets[cite: 10]
+// The node for separate chaining buckets
 struct HashNode {
     Facility facility;
     HashNode* next;
@@ -13,7 +13,7 @@ struct HashNode {
     HashNode(const Facility& f) : facility(f), next(nullptr) {}
 };
 
-// Custom Hash Table keyed by facility ID using Separate Chaining[cite: 1, 10]
+// Made the custom hash table keyed by facility ID using Separate Chaining
 class HashTable {
 private:
     size_t capacity;
@@ -21,23 +21,23 @@ private:
     size_t collisionsCount;
     std::vector<HashNode*> buckets;
 
-    // Custom polynomial string hash function[cite: 10]
+    // Custom polynomial string hash function
     size_t hashFunction(const std::string& key) const;
 
 public:
     explicit HashTable(size_t cap = 11);
     ~HashTable();
 
-    // Inserts facility record; rejects duplicate IDs[cite: 9, 10]
+    // This inserts facility record and rejects duplicate IDs
     bool insert(const Facility& facility);
 
-    // ID Lookup using hash table[cite: 9, 10]
+    // The ID lookup using hash table
     Facility* search(const std::string& id) const;
 
-    // Case-insensitive duplicate check[cite: 10]
+    // Case-insensitive duplicate check
     bool contains(const std::string& id) const;
 
-    // Diagnostics[cite: 10]
+    // Diagnostics
     size_t getCapacity() const { return capacity; }
     size_t getEntriesCount() const { return entriesCount; }
     size_t getCollisionsCount() const { return collisionsCount; }
