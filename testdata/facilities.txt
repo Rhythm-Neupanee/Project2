@@ -1,0 +1,18 @@
+# Custom Test Facilities - includes ID collisions (F001, F012 both hash to index 3; F009, F010, F034 hash to 0)
+# Also includes lowercase ID (f004), duplicate ID (F001), unknown building, invalid ID format
+F001|Main Reading Room|Library|Library
+F002|Tutoring Center|Library|Tutoring Center
+F003|Student Services Office|Student Union|Student Services Office
+F004|Computer Lab A|Science Building|Computer Lab
+F005|Room 101|Engineering Building|Classroom
+F006|Computer Lab B|Engineering Building|Computer Lab
+F007|Room 101|Business Building|Classroom
+F008|Fitness Center|Gym|Recreation
+F009|Room 205|Science Building|Classroom
+F010|Research Help Desk|Library|Library
+F012|Special Collections|Library|Library
+F034|Innovation Hub|Science Building|Research
+f004|Duplicate Computer Lab|Science Building|Computer Lab
+F001|Duplicate ID Test|Library|Library
+F99|Short ID|Library|Library
+F015|Unknown Building Fac|Unknown Hall|Classroom
