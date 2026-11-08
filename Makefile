@@ -1,15 +1,17 @@
-
 # Compiler options
 CXX = g++
 CXXFLAGS = -std=c++11 -Iinclude
 
-# Build the program
+# Build the executable only (Standard for UNT CSE CELL grading)
 all:
-	g++ $(CXXFLAGS) scr/*.cpp -o app
-	.\app.exe
+	$(CXX) $(CXXFLAGS) scr/*.cpp -o app
 
-# Remove the program
+# Optional target to build and run manually
+run: all
+	./app
+
+# Remove the compiled executable
 clean:
 	rm -f app
 
-.PHONY: all clean
+.PHONY: all run clean
