@@ -11,7 +11,7 @@ Patrick Ezeli                     | Campus Graph & Data      | Implemented Campu
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Rhythm Neupane                    | Department General Tree, | Implemented DepartmentTree, Utils      | Tree traversal tests,      | Repository Owner;      |
 (GitHub: Rhythm-Neupanee)         | Utils, & Integration     | helper logic, root/parent linkages,    | linker error fixes, & PR   | 12 commits authored;   |
-                                  |                          | main setup, & repo administration.     | code reviews.              | 1 PR merged            |
+                                  |                          | & repo administration.                 | code reviews.              | 1 PR merged            |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Detailed Summaries:
