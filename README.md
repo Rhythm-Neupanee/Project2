@@ -53,7 +53,7 @@ Project2/
 
 2. Build and run the executable automatically using `make`:
    ```bash
-   make
+   make run
    ```
    *(Compiles all source files in `scr/` into `app` and automatically launches the executable)*
 
