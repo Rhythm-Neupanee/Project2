@@ -15,7 +15,7 @@ Project2/
 │   ├── DepartmentTree.h     # General Department Tree hierarchy
 │   └── DataLoader.h         # File loading and parsing engine
 │
-├── src/                     # Source files (.cpp)
+├── scr/                     # Source files (.cpp)
 │   ├── main.cpp             # Entry point & interactive CLI menu
 │   ├── Utils.cpp
 │   ├── HashTable.cpp
