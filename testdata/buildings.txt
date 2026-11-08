@@ -1,0 +1,10 @@
+# Custom Test Buildings - includes case variation test
+Library
+Student Union
+Science Building
+Engineering Building
+Business Building
+Gym
+Observatory
+library
+STUDENT UNION
