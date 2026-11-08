@@ -1,0 +1,97 @@
+==================================================
+        CSCE 2110 Project 2 - Milestone 1
+               Test Results
+==================================================
+
+Test 1: File Loading & Parsing
+Description: Tested blank lines, comments (#), extra spaces, and malformed field lines.
+Input: data/ directory input files.
+Result: Comments and blank lines skipped. Warnings printed with line numbers for invalid lines.
+Result: PASS
+
+Test 2: Missing File Handling
+Description: Verified program behavior when a required input file is missing.
+Input: Specified data folder missing connections.txt.
+Result: Printed "Error opening file: data/connections.txt. Treating as empty." System loaded remaining files and reached menu.
+Result: PASS
+
+Test 3: Case-Insensitive Duplicate Verification
+Description: Tested duplicate building names and facility IDs with different capitalization.
+Input: buildings.txt ("Library", "library"), facilities.txt ("F001", "f001").
+Result: Printed duplicate warnings for line 9 in buildings.txt and line 17 in facilities.txt. Retained original accepted records.
+Result: PASS
+
+Test 4: Unknown References & Connection Constraints
+Description: Tested unknown building references in connections/facilities, duplicate/reversed connections, and unknown department parents.
+Input: testdata/ files with unknown building "FakeHall", reversed connection "Student Union|Library", and unknown parent "Magic Dept".
+Expected Result: Issue clear line-numbered warnings for each issue and skip invalid entries.
+Actual Result: All bad references and duplicate connections were identified and skipped cleanly with warnings.
+Result: PASS
+
+Test 5: Facility ID Search (Custom Hash Table)
+Description: Tested exact uppercase ID search, lowercase input, invalid ID format, and missing ID.
+Input: "F004", "f004", "004", "F999"
+Expected Result: 
+  - F004 -> Returns Computer Lab A record.
+  - f004 -> Normalizes to F004 and returns same record.
+  - 004 -> Displays invalid ID format message (must be F + 3 digits).
+  - F999 -> Displays valid ID but not found message.
+Actual Result: All 4 search tests produced expected outputs and proper normalized ID lookups.
+Result: PASS
+
+Test 6: Hash Collision & Duplicate Key Test (HASH-7)
+Description: Checked hash collision reporting on capacity 11 table and verified duplicate key insertion does not increment collision count.
+Input: testdata/facilities.txt loaded into capacity 11 table. Attempt re-inserting duplicate ID F001.
+Result: 3 collisions recorded for valid entries during file load. Inserting duplicate F001 was rejected and collision count remained at 3.
+Result: PASS
+
+Test 7: Campus Graph Counts & Degrees
+Description: Display total vertices, edges, and degree of each campus building.
+Input: Sample dataset with 7 buildings and 6 connections.
+Actual Result: Counts and individual degrees matched expected output.
+Result: PASS
+
+Test 8: BFS Reachability (Connected & Isolated Buildings)
+Description: Perform BFS reachability traversal starting from a connected building and an isolated building.
+Input: Starting building = "Library", then "Observatory".
+Result: BFS visit order followed neighbor insertion order. Distances and counts were accurate for both cases.
+Result: PASS
+
+Test 9: BFS Unknown Starting Building
+Description: Test BFS error handling when user enters a building not in the graph.
+Input: Starting building = "Unknown Building"
+Result: Printed "Error: Unknown starting building 'Unknown Building'."
+Result: PASS
+
+Test 10: Department Tree Search & Preorder Traversal
+Description: Search for root node, child node, missing department, and display preorder traversal of the tree.
+Input: Search "University", "Computer Science", "Fake Dept", and run preorder option (Menu 9).
+Expected Result: Search displays department name, parent, direct child count, and depth. Preorder prints full sequence on one line.
+Result: All search metrics were exact. Preorder printed: University -> College of Engineering -> Computer Science -> Electrical Engineering -> College of Science -> Mathematics -> Physics.
+Result: PASS
+
+Test 11: Add Department
+Description: Verify adding root when tree is empty vs adding child under existing parent.
+Input: Add root as "University" when the tree is empty, then add "College of Engineering" under "University".
+Result: Root created successfully, and child department attached properly to parent.
+Result: PASS
+
+Test 12: Add Department Error Validation
+Description: Test adding department with unknown parent name and adding duplicate department name.
+Input: Add "Robotics" under "Fake College", add duplicate "Mathematics" under "College of Science".
+Result: System printed specific error messages and kept existing tree structure intact.
+Result: PASS
+
+Test 13: Menu Recovery & Invalid Input
+Description: Test entering letters, out-of-range numbers, or blank input at numeric menu prompts.
+Input: "abc", "-5", "99", enter key
+Expected Result: Prompt error saying the reason. 
+Actual Result: Output "Error: Invalid numeric input. Please enter a valid number."
+Result: PASS
+
+Test 14: Space Handling in User Prompts
+Description: Verify input prompts handle strings containing spaces properly.
+Input: Search building "Student Union", search department "College of Science".
+Expected Result: Preserve internal spaces and match target entities.
+Actual Result: Multi-word queries matched records accurately.
+Result: PASS
