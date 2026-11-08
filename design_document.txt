@@ -1,0 +1,41 @@
+DESIGN DOCUMENT - MILESTONE 1 
+
+1. CUSTOM ID HASH TABLE 
+
+ The hash function uses a custom hash table to store in and organize facility IDs. Before an ID is added, it is cleaned up by being taken off extra spaces and changing all the letters uppercase. 
+
+- Collision Handling: Separate chaining is used to handle collisions. Each bucket contains its own link list that can grow whenever multiple IDs are assigned to the same bucket 
+
+- Collision Definition: A collision happens when a new valid facility ID is added to a bucket that already contains another ID. 
+
+- Capacity & Rejections: The hash table starts with 11 buckets and since linked lists can grow there is no fixed limit on how many IDs can be stored. An ID is only rejected if it has an invalid format or already exists in the table. Rejected IDs do not count as collisions. 
+
+2. CAMPUS GRAPH 
+
+- Representation: The campus graph uses an adjacency list that stores building names in a std::vector<std::string> and their connections in a std::vector<std::vector<int>>. Both buildings and their connections can grow as needed. 
+
+- Justification: This method saves memory by only storing connections that actually exist. It also keeps connections in the order they were added, making bfs traversals consistent each time the program runs.  
+
+3. DEPARTMENT TREE 
+
+- Representation: This department tree is set up so that each department keeps track of its parent and its child department using a vector of pointers 
+
+- Operations: The depth of each department is found by following its parent pointers until it reaches its root.  The destructors are also used to automatically clean up the dynamically allocated memory and stop memory leaks. 
+
+Index = (sum(key[i] * 31^i)) % Capacity (where Capacity = 11) 
+
+4.Main Classes and Modules 
+
+-Facility: The structure that holds the ID, name, building spelling from building.txt, and the category for every facility record. 
+
+-Hash table: This manages custom string hashing, separate chaining insertions, ID lookups, duplicate the key checks, and collisions. 
+
+-Campus Graph: This handles building the vertices, undirected walkway edges, degree calculations, and the BFS reachability traversals. 
+
+-Department Tree: The general tree structure supporting dynamic child pointers, parent depth calculations, 4-space indented display, and the preorder sequence traversals. 
+
+-Data Loader: This handles the file loading for all of the four text files, parsing fields, and printing line by line warnings for rejected records. 
+
+-Utils: The helper namespace for trimming whitespace, ascll uppercase conversion, and the facility ID format validation. 
+
+-main.cpp: The point that handles optional command line arguments for test directories, coordinates file loading, and it also runs the interactive menu loop.
