@@ -10,6 +10,8 @@ DESIGN DOCUMENT - MILESTONE 1
 
 - Capacity & Rejections: The hash table starts with 11 buckets and since linked lists can grow there is no fixed limit on how many IDs can be stored. An ID is only rejected if it has an invalid format or already exists in the table. Rejected IDs do not count as collisions. 
 
+Index = (sum(key[i] * 31^i)) % Capacity (where Capacity = 11) 
+
 2. CAMPUS GRAPH 
 
 - Representation: The campus graph uses an adjacency list that stores building names in a std::vector<std::string> and their connections in a std::vector<std::vector<int>>. Both buildings and their connections can grow as needed. 
@@ -22,7 +24,6 @@ DESIGN DOCUMENT - MILESTONE 1
 
 - Operations: The depth of each department is found by following its parent pointers until it reaches its root.  The destructors are also used to automatically clean up the dynamically allocated memory and stop memory leaks. 
 
-Index = (sum(key[i] * 31^i)) % Capacity (where Capacity = 11) 
 
 4.Main Classes and Modules 
 
